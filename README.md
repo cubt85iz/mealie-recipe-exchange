@@ -76,11 +76,12 @@ sudo chmod +x /usr/local/bin/mealie-import-or-update-recipe.sh
 
 ---
 
-## 4. Configure Systemd Units
+## 4. Configure systemd Units
 
 Create a file to store the export variables for `mealie-recipe-export.service`:
 
 ```bash
+sudo mkdir /etc/systemd/system/mealie-recipe-export.service.d
 sudo nano /etc/systemd/system/mealie-recipe-export.service.d/variables.conf
 ```
 
@@ -98,6 +99,7 @@ Save and exit.
 Create a file to store the import variables for `mealie-recipe-import.service`:
 
 ```bash
+sudo mkdir /etc/systemd/system/mealie-recipe-import.service.d
 sudo nano /etc/systemd/system/mealie-recipe-import.service.d/variables.conf
 ```
 
@@ -114,7 +116,8 @@ Save and exit.
 Create a file to store the monitored paths for `mealie-recipe-import.path`:
 
 ```bash
-sudo nano /etc/systemd/system/mealie-recipe-export.service.d/paths.conf
+sudo mkdir /etc/systemd/system/mealie-recipe-import.path.d
+sudo nano /etc/systemd/system/mealie-recipe-import.path.d/paths.conf
 ```
 
 Add:
