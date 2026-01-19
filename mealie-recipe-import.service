@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/usr/local/bin/mealie-import-or-update.sh %f
+ExecStart=/usr/local/bin/mealie-import-or-update-recipe.sh %f
 
 # Update the provided variables.conf file to specify the
 # URL & API token for accessing Mealie.
