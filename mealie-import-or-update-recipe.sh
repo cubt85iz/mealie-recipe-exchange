@@ -65,6 +65,3 @@ else
     echo
     echo "Import complete."
 fi
-
-
-
