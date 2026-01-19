@@ -1,1 +1,9 @@
-# Set up a timer unit with a customizable interval
+[Unit]
+Description=Nightly export of Mealie recipes
+
+[Timer]
+OnCalendar=*-*-* 02:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

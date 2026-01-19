@@ -1,1 +1,10 @@
-# Set up a path unit for monitoring the export dir for new recipes.
+[Unit]
+Description=Watch for new or modified recipe files
+
+[Path]
+# Add PathModified directives to the provided *.conf file.
+# Example,
+# PathModified=/var/recipes/userA/*.json
+
+[Install]
+WantedBy=multi-user.target

@@ -1,1 +1,8 @@
-# Create a service unit to export all recipes
+[Unit]
+Description=Export all Mealie recipes to JSON
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/mealie-export-recipes.sh

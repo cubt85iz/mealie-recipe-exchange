@@ -1,1 +1,15 @@
-# Create a service unit for importing new or modified recipes.
+[Unit]
+Description=Import or update a Mealie recipe
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/mealie-import-or-update.sh %f
+
+# Update the provided variables.conf file to specify the
+# URL & API token for accessing Mealie.
+
+# Queueing: allow multiple triggers but run sequentially
+# systemd will queue events while the service is busy
+ExecStartPre=/bin/sleep 1
